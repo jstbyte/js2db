@@ -1,0 +1,27 @@
+{
+  "name": "js2db",
+  "version": "1.0.0",
+  "description": "json database for clint side use in express .",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A29sTech/js2db.git"
+  },
+  "keywords": [
+    "js2db",
+    "jsondb",
+    "json2db"
+  ],
+  "author": "A29sTech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/A29sTech/js2db/issues"
+  },
+  "homepage": "https://github.com/A29sTech/js2db#readme",
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
+}
