@@ -15,15 +15,15 @@ let db_path = '.' /* Where DataBase or Json File Store */
 
 const db = new Js2db( db_path,  max_cache_size);
 
-/* Open A DataBase Name : MyDB */
+/* Open A DataBase Name : MyDB With .Then Method */
 let db_name = 'MyDB';
-db.open( db_name ).then( loaded_form => { /* Loaded From 'DISK' or 'CACHE' */
+db.open( db_name ).then( loaded_from => { /* Loaded From 'DISK' or 'CACHE' */
     let json_objects = { id: 1, name: 'Jahid', github_link: '/A29sTech' };
     
     /* insert a record */
     return db.insert( db_name, json_objects );
-}).then( insert_document => {
-    console.log( insert_document );
+}).then( inserted_document => {
+    console.log( inserted_document );
     
     /* Query From DataBase */
     let query = { github_link: '/A29sTech' };
@@ -37,5 +37,18 @@ db.open( db_name ).then( loaded_form => { /* Loaded From 'DISK' or 'CACHE' */
 }).then( num_removed => {
     consoel.log( num_removed );
 }).catch( console.log );
+
+/* With Async Function */
+
+/* Open DataBase */
+async function _main_(){
+    await db.open( db_name );
+    /* Insert A Record */
+    result = await db.insert( db_name, json_objects );
+    /* Query From DataBase */
+    result = await db.find( db_name, query );
+    /* Delete Records From DataBase */
+    num_of_record = await db.remove( db_name, query );
+}
 
 ```
