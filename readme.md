@@ -44,8 +44,10 @@ db.open( db_name ).then( loaded_from => { /* Loaded From 'DISK' or 'CACHE' */
 async function _main_(){
     await db.open( db_name );
     /* Insert A Record */
+    let json_objects = { id: 1, name: 'Jahid', github_link: '/A29sTech' };
     result = await db.insert( db_name, json_objects );
     /* Query From DataBase */
+    let query = { github_link: '/A29sTech' };
     result = await db.find( db_name, query );
     /* Delete Records From DataBase */
     num_of_record = await db.remove( db_name, query );
